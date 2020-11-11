@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+{% for claims in object_list %}
+    
+    <p>{{ claims.title }}</p>
+    <p>{{ claims.debt_currency }}</p>
+    <p>{{ claims.debt_amount }}</p>
+    <p>{{ claims.debtor_location }}</p>
+    <p>{{ claims.description }}</p>
+    
+
+{% endfor %}
+
+{% endblock content %}
