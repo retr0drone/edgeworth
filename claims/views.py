@@ -24,12 +24,15 @@ class ClaimsCreateView(generic.CreateView):
     form_class = ClaimsCreateForm
 
     def get_success_url(self):
-        return reverse('claims')
+        return reverse('claims:claims')
 
     def form_valid(self, form):
-        form.save()
+        claim = form.save(commit=False)
+        claim.user = self.request.user
+        claim.save()
         return super(ClaimsCreateView, self).form_valid(form)
 
+    
 
 class ClaimsUpdateView(generic.UpdateView):
     template_name = 'claims/claims_update.html'
