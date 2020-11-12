@@ -3,23 +3,31 @@ from django.urls import reverse_lazy
 from django.views import generic
 from . models import Claims
 from . forms import ClaimsCreateForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class ClaimsListView(generic.ListView):
+class ClaimsListView(LoginRequiredMixin, generic.ListView):
+    model = Claims
     template_name = 'claims/claims_list.html'
     queryset = Claims.objects.all()
 
+    def get_queryset(self):
+        return Claims.objects.filter(user=self.request.user)
 
-class ClaimsDetailView(generic.DetailView):
+
+class ClaimsDetailView(LoginRequiredMixin, generic.DetailView):
     model = Claims
     template_name = 'claims/claims_detail.html'
-    #     # if not detail.user == self.request.user:
-    #     #     raise Http404
-    def get_object(self):
-        return get_object_or_404(Claims, pk=self.kwargs['pk'])
+
+    def get_queryset(self):
+        if self.request.user.is_authenticated:
+            return Claims.objects.filter(user=self.request.user)
+        else:
+            return Claims.objects.none()
+        return redirect('claims:claims')
 
 
-class ClaimsCreateView(generic.CreateView):
+class ClaimsCreateView(LoginRequiredMixin, generic.CreateView):
     template_name = 'claims/claims_create.html'
     form_class = ClaimsCreateForm
 
@@ -32,9 +40,8 @@ class ClaimsCreateView(generic.CreateView):
         claim.save()
         return super(ClaimsCreateView, self).form_valid(form)
 
-    
 
-class ClaimsUpdateView(generic.UpdateView):
+class ClaimsUpdateView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'claims/claims_update.html'
     form_class = ClaimsCreateForm
     queryset = Claims.objects.all()
@@ -50,7 +57,7 @@ class ClaimsUpdateView(generic.UpdateView):
         return super(ClaimsUpdateView, self).form_valid(form)
 
 
-class ClaimsDeleteView(generic.DeleteView):
+class ClaimsDeleteView(LoginRequiredMixin, generic.DeleteView):
     template_name = 'claims/claims_delete.html'
     queryset = Claims.objects.all()
 

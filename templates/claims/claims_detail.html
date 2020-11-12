@@ -2,19 +2,22 @@
 
 {% block content %}
 
-<h1>Detail View</h1>
+{% if user.is_authenticated %}
+  
+    <h1>Detail View Test</h1>
 
-<p>{{ claims.title }}</p>
-<p>{{ claims.description }}</p>
-<p>{{ claims.debt_currency }}</p>
-<p>{{ claims.debt_amount }}</p>
-<p>{{ claims.debtor_name }}</p>
-<p>{{ claims.debtor_email }}</p>
-<p>{{ claims.debtor_phone }}</p>
-<p>{{ claims.debtor_location }}</p>
-<p>{{ claims.support_files }}</p>
-<p>{{ claims.date_created }}</p>
+    <p>{{ claims.title }}</p>
+    <p>{{ claims.description }}</p>
+    <p>{{ claims.debt_currency }}</p>
+    <p>{{ claims.debt_amount }}</p>
+    <p>{{ claims.debtor_name }}</p>
+    <p>{{ claims.debtor_email }}</p>
+    <p>{{ claims.debtor_phone }}</p>
+    <p>{{ claims.debtor_location }}</p>
+    <p>{{ claims.support_files }}</p>
+    <p>{{ claims.date_created }}</p>
 
+{% endif %}
 
 
 {% endblock content %}

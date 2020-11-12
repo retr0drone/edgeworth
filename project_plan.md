@@ -30,3 +30,17 @@ Staff App
 
 - Update Amount Recieved
 
+Fixes
+
+- 404 Errors
+- Removing object pk numbers
+
+ClaimsDetailView Old
+     def get_object(self):
+         claim = super(ClaimsDetailView, self).get_object()
+         if not claim.user == self.request.user:
+             return redirect('claims:claims')
+         else:
+             return claim
+    
+

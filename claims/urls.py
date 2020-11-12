@@ -9,5 +9,4 @@ urlpatterns = [
     path('create/', ClaimsCreateView.as_view(), name='create'),
     path('update/<pk>/', ClaimsUpdateView.as_view(), name='update'),
     path('delete/<pk>/', ClaimsDeleteView.as_view(), name='delete'),
-
 ]

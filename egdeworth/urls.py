@@ -10,6 +10,8 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', HomeView.as_view(), name='home'),
     path('claims/', include('claims.urls', namespace='claims')),
+    path('staff/', include('staff.urls', namespace='staff')),
+    path('profile/', ProfileView.as_view(), name='prpfile'),
 ]
 
 if settings.DEBUG:

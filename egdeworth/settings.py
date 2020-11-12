@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     # Apps
     'claims',
     'core',
+    'staff',
 ]
 
 MIDDLEWARE = [
@@ -94,6 +95,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+LOGIN_REDIRECT_URL = '/claims'
 SITE_ID = 1
 
 LANGUAGE_CODE = 'en-us'
