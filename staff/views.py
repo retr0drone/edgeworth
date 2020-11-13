@@ -13,6 +13,17 @@ class ClaimsListView(LoginRequiredMixin, StaffUserMixin, generic.ListView):
     paginate_by = 20
     context_object_name = 'claims'
 
+    def get_context_data(self, **kwargs):
+        context = super(ClaimsListView, self).get_context_data(**kwargs)
+        context['claims_count'] = self.get_queryset().count()
+        context['claims_under_review'] = self.queryset.filter(status='Under Review').count()
+        context['claims_in_progress'] = self.queryset.filter(status='In Progress').count()
+        context['claims_completed'] = self.queryset.filter(status='Completed').count()
+        
+        
+        return context
+    
+
 
 class ClaimsDetailView(LoginRequiredMixin, StaffUserMixin, generic.DetailView):
     model = Claims

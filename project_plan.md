@@ -44,3 +44,29 @@ ClaimsDetailView Old
              return claim
     
 
+
+class Job(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100)
+    description = models.TextField(max_length=500)
+    cost = models.PositiveIntegerField()
+    paid = models.PositiveIntegerField()
+
+class =JobListView(LoginRequiredMixin, generic.ListView):
+    model = Job
+    template_name = 'job/=job_list.html'
+    context_object = '=job_list'
+    paginate = 10
+    queryset = Job.objects.all()
+
+    def get_queryset(self):
+        return Job.objects.filter(user=self.request.user)
+
+    def get_context_data(self, **kwargs):
+            context = super(=JobListView, self).get_context_data(**kwargs)
+            context['job_count'] = self.get_queryset().count()
+        
+
+  
+        
+

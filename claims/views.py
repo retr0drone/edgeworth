@@ -9,11 +9,20 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 class ClaimsListView(LoginRequiredMixin, generic.ListView):
     model = Claims
     template_name = 'claims/claims_list.html'
+    context_object = 'claims_list'
+    paginate = 10
     queryset = Claims.objects.all()
 
     def get_queryset(self):
         return Claims.objects.filter(user=self.request.user)
 
+    def get_context_data(self, **kwargs):
+        context = super(ClaimsListView, self).get_context_data(**kwargs)
+        context['claims_count'] = self.get_queryset().count()
+        context['claims_under_review'] = self.queryset.filter(user=self.request.user, status='Under Review').count()
+        context['claims_in_progress'] = self.queryset.filter(user=self.request.user, status='In Progress').count()
+        context['claims_completed'] = self.queryset.filter(user=self.request.user, status='Completed').count()
+        
 
 class ClaimsDetailView(LoginRequiredMixin, generic.DetailView):
     model = Claims

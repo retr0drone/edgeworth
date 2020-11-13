@@ -1,8 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-
+<h3>Claims Count</h3>
+<h3>{{ claims_count }}</h3>
+<br>
+<h3>Claims Under Review</h3>
+<h3>{{ claims_under_review }}</h3>
+<br>
+<h3>Claims In Progress</h3>
+<h3>{{ claims_in_progress }}</h3>
+<br>
+<h3>Claims Completed</h3>
+<h3>{{ claims_completed }}</h3>
+<hr>
+<h3>Debt Amount</h3>
+<h3>{{ debt_amount }}</h3>
 
 {% for claims in object_list %}
     

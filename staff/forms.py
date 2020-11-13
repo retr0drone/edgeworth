@@ -7,5 +7,5 @@ class ClaimsCreateForm(forms.ModelForm):
         model = Claims
         fields = [ 'user','title','description','debt_currency',
                     'debt_amount', 'debtor_name', 'debtor_email',
-                    'debtor_phone', 'debtor_location','support_files',
+                    'debtor_phone', 'debtor_location','support_files', 'status'
         ]
