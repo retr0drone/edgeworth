@@ -1,7 +1,26 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
-    Welcome to Edge Worth
+    <div class="container jumbotron" style="border: 3px solid pink">
+        <div class="row">
+            <div class="col">
+                <h1>Track Your</h1>
+                <h1>Claims</h1>
+                <h1>Seamlessly</h1>
+                <p class="lead">Uncover the real-time insights you need for debt recovery</p>
+            </div>
+            <div class="col">
+                <img src="static/images/home/home_image.svg" alt="home_image">
+            </div>
+        </div>        
+    </div>
+    
+
+
+    <div id="root"></div>
+
+    <script src="{% static 'js/api.js' %}"></script>
 
 {% endblock content %}

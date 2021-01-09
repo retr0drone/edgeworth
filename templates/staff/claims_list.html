@@ -1,53 +1,16 @@
 {% extends "base.html" %}
-
+{% load static %}
 
 {% block content %}
 
-<h1>This is the Staff Portal</h1>
+<ul class="sidenav">
+    <li><a href="#">Create</a></li>
+    <li><a href="#">Profile</a></li>
+    <li><a href="#">Invoices</a></li>
+    <li><a href="#">Users</a></li>
+    <li><a href="#">Close</a></li>
+</ul>
 
-<h3>Claims Count</h3>
-<h3>{{ claims_count }}</h3>
-<br>
-<h3>Claims Under Review</h3>
-<h3>{{ claims_under_review }}</h3>
-<br>
-<h3>Claims In Progress</h3>
-<h3>{{ claims_in_progress }}</h3>
-<br>
-<h3>Claims Completed</h3>
-<h3>{{ claims_completed }}</h3>
-
-
-{{ request.user.email }}
-  <div class="container">
-      <table>
-          <thead>
-              <tr>
-                  <th>Ref ID</th>
-                  <th>Date</th>
-                  <th>User</th>
-                  <th>Currency</th>
-                  <th>Debt Amount</th>
-                  <th>Payment Status</th>
-                  
-              </tr>
-          </thead>
-          
-          
-            <tbody>
-                {% for claim in claims %}
-                    <tr>
-                        <td>{{ claim.reference_number }}</td>
-                        <td>{{ claim.date_created }}</td>
-                        <td>{{ claim.user }}</td>
-                        <td>{{ claim.debt_currency }}</td>
-                        <td>{{ claim.debt_amount }}</td>
-                        <td>{{ claim.status }}</td>
-                    </tr>
-                {% endfor %}
-               
-            </tbody>
-      </table>
-  </div>
+<h2>This is a test</h2>
 
 {% endblock content %}

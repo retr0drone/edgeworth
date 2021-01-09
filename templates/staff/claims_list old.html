@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<h1>This is the Staff Portal</h1>
+
+<h3>Claims Count</h3>
+<h3>{{ claims_count }}</h3>
+<br>
+<h3>Claims Under Review</h3>
+<h3>{{ claims_under_review }}</h3>
+<br>
+<h3>Claims In Progress</h3>
+<h3>{{ claims_in_progress }}</h3>
+<br>
+<h3>Claims Completed</h3>
+<h3>{{ claims_completed }}</h3>
+
+
+{{ request.user.email }}
+  <div class="container">
+      <table>
+          <thead>
+              <tr>
+                  <th>Ref ID</th>
+                  <th>Date</th>
+                  <th>User</th>
+                  <th>Currency</th>
+                  <th>Debt Amount</th>
+                  <th>Payment Status</th>
+                  
+              </tr>
+          </thead>
+          
+          
+            <tbody>
+                {% for claim in claims %}
+                    <tr>
+                        <td>{{ claim.reference_number }}</td>
+                        <td>{{ claim.date_created }}</td>
+                        <td>{{ claim.user }}</td>
+                        <td>{{ claim.debt_currency }}</td>
+                        <td>{{ claim.debt_amount }}</td>
+                        <td>{{ claim.status }}</td>
+                    </tr>
+                {% endfor %}
+               
+            </tbody>
+      </table>
+  </div>
+
+{% endblock content %}

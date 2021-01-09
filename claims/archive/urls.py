@@ -1,7 +1,14 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from . views import *
 
 
+router = DefaultRouter()
+
+router.register('claims', ClaimsViewSet)
+
+# customized for post method
+claims_detail = ClaimsViewSet.as_view({'get': 'list', 'post': 'create'})
 
 app_name = 'claims'
 
@@ -13,6 +20,8 @@ urlpatterns = [
     path('delete/<pk>/', ClaimsDeleteView.as_view(), name='delete'),
 
     # Django Rest Framework
-    path('', ClaimsRestListView.as_view(), name='claims-list'),
 
+    # Router
+    path('', include(router.urls)),
+    path('detail/', claims_detail, name='detail'), # customized for post method url
 ]

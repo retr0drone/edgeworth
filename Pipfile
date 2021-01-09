@@ -10,6 +10,8 @@ django = "*"
 psycopg2-binary = "*"
 django-environ = "*"
 django-allauth = "*"
+djangorestframework = "*"
+httpie = "*"
 
 [requires]
 python_version = "3.8"

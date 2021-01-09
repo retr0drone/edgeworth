@@ -1,17 +1,38 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic
-from . models import Claims
+from . models import Claims, Comments
 from . forms import ClaimsCreateForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponse, JsonResponse
+from django.db.models import Sum
 
+# Django Rest Framework
+from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from . serializers import ClaimsSerializer
+
+
+# Django Rest Framework Serializers Start
+
+class ClaimsRestListView(ListAPIView):
+    permission_classes = (IsAuthenticated,)
+    serializer_class = ClaimsSerializer
+    queryset = Claims.objects.all()
+
+# Django Rest Framework Serializers End
+
+
+def home(request):
+    return render(request, 'index.html')
+    
 
 class ClaimsListView(LoginRequiredMixin, generic.ListView):
     model = Claims
-    template_name = 'claims/claims_list.html'
-    context_object = 'claims_list'
-    paginate = 10
     queryset = Claims.objects.all()
+    template_name = 'claims/claims_list.html'
+    context_object_name = 'claims_list'
+    paginate = 10
 
     def get_queryset(self):
         return Claims.objects.filter(user=self.request.user)
@@ -22,7 +43,11 @@ class ClaimsListView(LoginRequiredMixin, generic.ListView):
         context['claims_under_review'] = self.queryset.filter(user=self.request.user, status='Under Review').count()
         context['claims_in_progress'] = self.queryset.filter(user=self.request.user, status='In Progress').count()
         context['claims_completed'] = self.queryset.filter(user=self.request.user, status='Completed').count()
-        
+        context['total_debt_amount'] = Claims.objects.filter(pk=self.kwargs.get('pk')).aggregate(total_debt_amount=Sum('debt_amount'))
+        return context
+
+
+
 
 class ClaimsDetailView(LoginRequiredMixin, generic.DetailView):
     model = Claims

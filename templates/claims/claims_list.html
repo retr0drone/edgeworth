@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
+<h1>This is the User Portal</h1>
+
 <h3>Claims Count</h3>
 <h3>{{ claims_count }}</h3>
 <br>
@@ -13,16 +15,20 @@
 <h3>Claims Completed</h3>
 <h3>{{ claims_completed }}</h3>
 <hr>
+{% for debt in claims_list  %}
 <h3>Debt Amount</h3>
-<h3>{{ debt_amount }}</h3>
+<h3>{{ debt.total_debt_amount }}</h3>
+{% endfor %}
 
-{% for claims in object_list %}
+
+{% for claims in claims_list %}
     
     <p>{{ claims.title }}</p>
     <p>{{ claims.debt_currency }}</p>
     <p>{{ claims.debt_amount }}</p>
     <p>{{ claims.debtor_location }}</p>
     <p>{{ claims.description }}</p>
+    
     
 
 {% endfor %}

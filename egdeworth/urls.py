@@ -3,15 +3,26 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from core.views import *
+from claims.views import home
+
+# Django Rest Framework
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('', HomeView.as_view(), name='home'),
+    # path('', HomeView.as_view(), name='home'),
     path('claims/', include('claims.urls', namespace='claims')),
     path('staff/', include('staff.urls', namespace='staff')),
-    path('profile/', ProfileView.as_view(), name='prpfile'),
+    path('profile/', ProfileView.as_view(), name='profile'),
+
+    # Django Rest Framework
+    path('api-auth/', include('rest_framework.urls')),
+    path('api/claims/', include('claims.urls')),
+    path('', home, name='home'),
+
+   
 ]
 
 if settings.DEBUG:

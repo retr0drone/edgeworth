@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #FFFFFE;
+}
+
+.side_nav {
+    margin-top: 50px;
+    color: #5F6C7B;
+    font-family: 'Hind', sans-serif;
+    font-size: 32px;
+    color: #5F6C7B;
+}
+
+
+font-family: 'Hind', sans-serif;
+font-family: 'Montserrat', sans-serif;
