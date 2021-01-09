@@ -10,6 +10,7 @@
 
 body {
     background: #fefefe;
+    font-size: 20px;
 }
 
 /* ----------------------------------- */
@@ -65,8 +66,18 @@ body {
 h1 {
     color: #094067;
     font-family: 'Montserrat', sans-serif;
-    font-size: 80px;    
+    font-size: 400%;    
     font-weight: bold;
+}
+
+h1:after {
+    display: block;
+    height: 8px;
+    background-color: #3DA9FC;
+    content: " ";
+    width: 50px;
+    margin: 0;
+    /* margin-top: 20px; */
 }
 
 .jumbotron {
@@ -76,7 +87,7 @@ h1 {
     margin-top: 50px;
     color: #5F6C7B;
     font-family: 'Hind', sans-serif;
-    font-size: 32px;
+    font-size: 160%;
     color: #5F6C7B;
 }
 
