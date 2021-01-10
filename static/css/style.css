@@ -17,7 +17,7 @@ body {
 /* REUSABLE COMPONENTS */
 /* ----------------------------------- */
 
-/* TOP NAV */
+/* ------- TOP NAV ------- */
 .bg-light{
     background-color: #fefefe;
 }
@@ -50,7 +50,7 @@ body {
 
 
 
-/* SIDE NAV */
+/* ------- SIDE NAV ------- */
 .sidenav li a:link {
     margin-top: 50px;
     color: #5F6C7B;
@@ -60,9 +60,10 @@ body {
 }
 
 /* ----------------------------------- */
-/* HEADER */
+/* HOMEPAGE */
 /* ----------------------------------- */
 
+/* ------- Header ------- */
 h1 {
     color: #094067;
     font-family: 'Montserrat', sans-serif;
@@ -91,7 +92,34 @@ h1:after {
     color: #5F6C7B;
 }
 
+/* ------- SEARCH ------- */
 
+
+
+/* ------- CARDS ------- */
+
+.home-cards {
+    border: 1px solid #f6f6f6;
+    /* box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.199); */
+    box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.199);
+    margin: 80px;
+    padding: 30px 0;
+    border-radius: 20px;
+}
+
+/* ------- ICONS ------- */
+
+.handshake {
+    color: #5F6C7B;
+}
+
+.chart {
+    color: #3DA9FC;
+}
+
+.hand-usd {
+    color: #EF4565;
+}
 
 font-family: 'Hind', sans-serif;
 font-family: 'Montserrat', sans-serif;

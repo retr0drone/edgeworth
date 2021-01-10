@@ -87,7 +87,7 @@ Home Page Illustration
 https://storyset.com/illustration/creative-team/pana
 https://fontawesome.com/icons/handshake?style=regular
 https://fontawesome.com/icons/chart-line?style=solid
-https://fontawesome.com/icons/money-check-alt?style=solid
+https://fontawesome.com/icons/hand-holding-usd?style=solid
 https://fontawesome.com/icons/search?style=solid
 
 
