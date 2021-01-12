@@ -3,14 +3,44 @@
 
 {% block content %}
 
-<ul class="sidenav">
-    <li><a href="#">Create</a></li>
-    <li><a href="#">Profile</a></li>
-    <li><a href="#">Invoices</a></li>
-    <li><a href="#">Users</a></li>
-    <li><a href="#">Close</a></li>
-</ul>
+<div class="wrapper">
+    <div class="sidenav">
+        <h2>menu</h2>
+        <ul>
+            <li><a href="#"><i class="fas fa-plus"></i>Create</a></li>
+            <li><a href="#"><i class="far fa-user"></i>Profile</a></li>
+            <li><a href="#"><i class="far fa-file-alt"></i>Invoices</a></li>
+            <li><a href="#"><i class="fas fa-users"></i>Users</a></li>
+            <li><a href="#"><i class="far fa-window-close"></i>Close</a></li>
+        </ul>
+    </div>
+    <div class="row dashboard" style="border: 3px solid blue">
+        <div class="col welcome_user" style="border: 3px solid red">
+            <h5>Welcome User</h5>
+        </div>
+        <div class="col" style="border: 3px solid red">
+            <button class="total_debt_amount">
+                <span>N 952,482,635</span>
+                <p>Total Debt Amount</p>
+            </button>
+        </div>
+    </div>
+</div>
 
-<h2>This is a test</h2>
+<section>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+    </div>
+</section>
+
 
 {% endblock content %}
+
+Create
+Profile
+Invoices
+Users
+Close

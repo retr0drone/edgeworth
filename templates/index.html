@@ -4,18 +4,26 @@
 {% block content %}
 
     <header>
-        <div class="container jumbotron" style="border: 3px solid pink">
+        <div class="container jumbotron">
             <div class="row">
                 <div class="col">
                     <h1>Track Your Claims Seamlessly</h1>
                     <p class="lead">Uncover the real-time insights you need for debt recovery</p>
                 </div>
-                <div class="col">
+                <div class="col home_img">
                     <img src="static/images/home/home_image.svg" alt="home_image">
                 </div>
             </div>
             
+            <form method="post" action="#" class="search_ref_id">
+                <input type="text" placeholder="Search Ref IDs here" class="search_field">
+                <button class="btn_search"><i class="fas fa-search"></i></button>
+            </form>
+            <div>
+                <h2 class="home__empty">&nbsp</h2>
+            </div>
         </div>
+        
     </header>
 
     <section>
@@ -23,6 +31,16 @@
             <div class="row text-center">
                 <div class="col home-cards handshake"><i class="far fa-handshake fa-6x"></i></div>
                 <div class="col home-cards chart"><i class="fas fa-chart-line fa-6x"></i></div>
+                <div class="col home-cards hand-usd"><i class="fas fa-hand-holding-usd fa-5x"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col home-cards handshake" style="border: 3px solid black"><i class="far fa-handshake fa-6x" style="border: 3px solid black"></i></div>
+                <div class="col home-cards chart" style="border: 3px solid black"><i class="fas fa-chart-line fa-6x" style="border: 3px solid black"></i></div>
                 <div class="col home-cards hand-usd"><i class="fas fa-hand-holding-usd fa-5x"></i></div>
             </div>
         </div>
