@@ -23,8 +23,8 @@
       <table>
           <thead>
               <tr>
-                  <th>Ref ID</th>
                   <th>Date</th>
+                  <th>Ref ID</th>
                   <th>User</th>
                   <th>Currency</th>
                   <th>Debt Amount</th>
@@ -37,8 +37,8 @@
             <tbody>
                 {% for claim in claims %}
                     <tr>
-                        <td>{{ claim.reference_number }}</td>
                         <td>{{ claim.date_created }}</td>
+                        <td>{{ claim.reference_number }}</td>
                         <td>{{ claim.user }}</td>
                         <td>{{ claim.debt_currency }}</td>
                         <td>{{ claim.debt_amount }}</td>

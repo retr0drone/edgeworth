@@ -91,13 +91,13 @@ body {
 
 .wrapper .sidenav ul li {
     padding: 15px;
-    width: 80%;
+    width: 85%;
     /* border: 1px solid #fefefe; */
     box-shadow: none;
     border-radius: 50px;
     margin-top: 30px;
     margin-left: 10px;
-    font-size: 70%;
+    font-size: 80%;
     padding-left: 50px;
     color: #FFFFFE;
     transform: scale(1.03);
@@ -116,56 +116,15 @@ body {
     font-weight: 600;
 }
 
-.wrapper .sidenav ul li a .fas, .far {
+.wrapper .sidenav ul li a .fas {
+    width: 30px;
+}
+.wrapper .sidenav ul li a .far {
     width: 30px;
 }
 
 .wrapper .sidenav ul li:first-child .fas {
     color: #EF4565;
-}
-
-/* -----Dashboard----- */
-
-.wrapper .dashboard {
-    width: 100%;
-    margin-left: 200px;
-}
-
-/* -----User----- */
-.wrapper .welcome_user {
-    width: 100%;
-    font-family: 'Hind', sans-serif;
-    margin: 50px 0;
-}
-
-/* -----Total Debt Amount----- */
-
-.wrapper .dashboard .total_debt_amount {
-    display:  inline-block;
-    background-color: #3DA9FC;
-    border-radius: 100px;
-    color: #f6f6f6;
-    padding: 10px  50px 10px 50px;
-    display: inline-block;
-    border: 3px solid #3DA9FC;
-    margin: 27px 0;
-    box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.199)
-    /* box-shadow: 8px 8px 24px #3da9fc34 */
-
-}
-
-.wrapper .dashboard .total_debt_amount span {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 160%;
-    display: inline-block;    
-    margin-top: 20px;
-    font-weight: 700;
-}
-
-.wrapper .dashboard .total_debt_amount p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 80%;    
-    margin-bottom: -5px;
 }
 
 /* ------- SEARCH ------- */
@@ -249,7 +208,7 @@ h1:after {
 
 /* ------- CARDS ------- */
 
-.home-cards {
+.home_cards .container .cards .home-cards {
     border: 1px solid #f6f6f6;
     /* box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.199); */
     box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.199);
@@ -271,6 +230,187 @@ h1:after {
 
 .hand-usd {
     color: #EF4565;
+}
+
+/* ----------------------------------- */
+/* CLAIMS LIST */
+/* ----------------------------------- */
+
+/* -----Dashboard----- */
+
+.wrapper .dashboard {
+    width: 100%;
+    margin-left: 200px;
+}
+
+/* -----User----- */
+.wrapper .welcome_user {
+    width: 100%;
+    font-family: 'Hind', sans-serif;
+    margin: 50px 0;
+}
+
+/* -----Total Debt Amount----- */
+
+.wrapper .dashboard .total_debt_amount {
+    display:  inline-block;
+    background-color: #3DA9FC;
+    border-radius: 100px;
+    color: #f6f6f6;
+    padding: 10px  50px 10px 50px;
+    display: inline-block;
+    border: 3px solid #3DA9FC;
+    margin: 27px 0;
+    box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.199)
+    /* box-shadow: 8px 8px 24px #3da9fc34 */
+
+}
+
+.wrapper .dashboard .total_debt_amount span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 160%;
+    display: inline-block;    
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+.wrapper .dashboard .total_debt_amount p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 80%;    
+    margin-bottom: -5px;
+}
+
+/* -----Claims List 4 Boxes----- */
+
+.claims_list_info {
+    width: 83%;
+    margin-left: 17%;
+    /* margin-top: 20px; */
+}
+
+.claims_list_box {
+    margin: 50px;
+    padding: 40px 40px;
+    border: 1px solid #f6f6f6;
+    /* box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.199); */
+    box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.199);
+    border-radius: 20px;
+    text-align: center;
+    
+}
+
+.claims_list_box:last-child{
+    background-color: #D8EEFE;
+    border: 1px solid #D8EEFE;
+}
+
+.claims_list_info .claims_list_box span {
+    width: 100%;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100%;
+    margin-left: 15px;
+    
+}
+
+.claims_list_info .claims_list_box p {
+    width: 100%;
+    text-align: center;
+    font-family: 'Hind', sans-serif;
+    font-size: 80%;
+    margin-top: 20px;
+
+}
+
+.fa-chart-bar {
+    color: #EF4565;
+    font-weight: 700;
+    margin-right:5px;
+}
+
+.total_claims_box {
+    color: #EF4565;
+}
+
+.fa-search-dollar {
+    color: #3DA9FC;
+    margin-right:5px;
+    /* font-weight: 700; */
+}
+
+.under_review_box {
+    color: #3DA9FC;
+}
+
+.fa-spinner {
+    color: #5F6C7B;
+    margin-right:5px;
+}
+
+.in_progress_box {
+    color: #5F6C7B;
+}
+
+.fa-tasks {
+    color: #094067;
+    margin-right:5px;
+}
+
+.completed_box {
+    color: #094067;
+}
+
+/* -----Table: Recent Claims----- */
+
+.claims_list_margin_left {
+    margin-left: 17%;
+}
+
+.claims_list_table {
+    width: 80%;
+    margin: 2% 10%;
+    border-collapse: collapse;
+    font-size: 80%;
+    border-radius: 20px;
+    overflow: hidden;
+    /* border-radius: 20px; */
+    box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.199);
+
+    /* margin: 25px 0; */
+    /* margin-top: 20px; */
+    /* min-width: 400px; */
+}
+
+
+.claims_list_table thead tr {
+    background-color: #D8EEFE;
+    color: #094067;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;;
+}
+
+.claims_list_table th,
+.claims_list_table td {
+    padding: 12px 15px;
+}
+
+.claims_list_table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    font-family: 'Hind', sans-serif;
+}
+
+.claims_list_table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f377;
+}
+
+.claims_list_table tbody tr:last-of-type {
+    border-bottom: 2px solid #D8EEFE;
+}
+
+.claims_list_table tbody tr.active-row {
+    font-weight: bold;
+    color: #D8EEFE;
 }
 
 font-family: 'Hind', sans-serif;

@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class="wrapper">
+<div class="wrapper" style="border: 3px solid green">
     <div class="sidenav">
         <h2>menu</h2>
         <ul>
@@ -16,7 +16,7 @@
     </div>
     <div class="row dashboard" style="border: 3px solid blue">
         <div class="col welcome_user" style="border: 3px solid red">
-            <h5>Welcome User</h5>
+            <h5>Welcome {{ request.user.email }}</h5>
         </div>
         <div class="col" style="border: 3px solid red">
             <button class="total_debt_amount">
@@ -25,16 +25,61 @@
             </button>
         </div>
     </div>
+    
 </div>
 
-<section>
-    <div class="row">
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
+<div class="row claims_list_info" style="border: 3px solid yellow">
+    <div class="col claims_list_box">
+        <i class="far fa-chart-bar"><span>{{ claims_count }}</span></i>
+        <p class="total_claims_box">Total Claims</p>
     </div>
-</section>
+    <div class="col claims_list_box">
+        <i class="fas fa-search-dollar"><span>{{ claims_under_review }}</span></i>
+        <p class="under_review_box">Under Review</p>
+    </div>
+    <div class="col claims_list_box">
+        <i class="fas fa-spinner"><span>{{ claims_in_progress }}</span></i>
+        <p class="in_progress_box">In Progress</p>
+    </div>
+    <div class="col claims_list_box">
+        <i class="fas fa-tasks"><span>{{ claims_completed }}</span></i>
+        <p class="completed_box">Completed</p>
+    </div>
+</div>
+
+<div class="claims_list_margin_left" style="border:3px solid blue">
+    <h3>Recent Claims</h3>
+    <table class="claims_list_table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Ref ID</th>
+                <th>User</th>
+                <th>Currency</th>
+                <th>Debt Amount</th>
+                <th>Payment Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for claim in claims %}
+            <tr>
+                <td>{{ claim.date_created }}</td>
+                <td>{{ claim.reference_number }}</td>
+                <td>{{ claim.user }}</td>
+                <td>{{ claim.debt_currency }}</td>
+                <td>{{ claim.debt_amount }}</td>
+                <td>{{ claim.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+
+
+
+
 
 
 {% endblock content %}
