@@ -47,8 +47,6 @@ class ClaimsListView(LoginRequiredMixin, generic.ListView):
         return context
 
 
-
-
 class ClaimsDetailView(LoginRequiredMixin, generic.DetailView):
     model = Claims
     template_name = 'claims/claims_detail.html'

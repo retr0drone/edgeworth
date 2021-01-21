@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+  
+<div class="wrapper">
+    {% include "sidenav.html" %}
+    <div class="client_text">
+        <p>Client Details</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 client_details_card">
+        <p class="client_details_card_label">Client Name</p>
+        <i class="far fa-building"><span>Google Inc</span></i>
+        
+        <p class="client_details_card_label" >Client Representative</p>
+        <i class="far fa-user"><span>Larry Page</span></i>        
+        
+        <div class="row">
+            <div class="col">
+                <p class="client_details_card_label" >Email</p>
+                <i class="far fa-envelope"><span>larry@google.com</span></i>
+                 
+            </div>
+            <div class="col">
+                <p class="client_details_card_label" >Telephone</p>
+                <i class="fas fa-phone-alt"><span>+111222555</span></i>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="client_details_card_label" >Sector</p>
+                <i class="fas fa-briefcase"><span>Internet Tech</span> </i>
+            </div>
+            <div class="col">
+                <p class="client_details_card_label">Location</p>
+                <i class="fas fa-map-marker-alt"><span>Silicon Valley</span></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div style="border: 1px solid red">
+            <div style="border: 1px solid purple">
+                <i class="fab fa-google"><span>$500,000,000</span></i>
+                <p>Total Claims</p>
+                <button>Edit Client</button>
+                <p>Recent Claims</p>
+                <div class="row"  style="border: 3px solid red">
+                    <div class="col">
+                        <p>EP 20000007</p>
+                        <p>3 days ago</p>
+                    </div>
+                    <div class="col">
+                        <p>$ 250,000</p>
+                        <p>PND</p>
+                    </div>
+                </div>
+                <div class="row"  style="border: 3px solid red">
+                    <div class="col">
+                        <p>EP 20000005</p>
+                        <p>Jan 10, 2021</p>
+                    </div>
+                    <div class="col">
+                        <p>$ 250,000</p>
+                        <p>PAID</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

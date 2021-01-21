@@ -6,6 +6,7 @@ from claims.models import Claims
 from . mixins import StaffUserMixin
 from . forms import ClaimsCreateForm
 
+# CLAIMS
 
 class ClaimsListView(LoginRequiredMixin, StaffUserMixin, generic.ListView):
     template_name = 'staff/claims_list.html'
@@ -22,7 +23,6 @@ class ClaimsListView(LoginRequiredMixin, StaffUserMixin, generic.ListView):
         context['claims_in_progress'] = self.queryset.filter(status='In Progress').count()
         context['claims_completed'] = self.queryset.filter(status='Completed').count()
         return context
-    
 
 
 class ClaimsDetailView(LoginRequiredMixin, StaffUserMixin, generic.DetailView):
@@ -71,3 +71,9 @@ class ClaimsDeleteView(LoginRequiredMixin, StaffUserMixin, generic.DeleteView):
         return reverse('claims')
 
 
+# CLIENT PROFILE
+
+
+# class ClientDetailView(LoginRequiredMixin, StaffUserMixin, generic.DetailView):
+class ClientDetailView(LoginRequiredMixin, StaffUserMixin, generic.TemplateView):
+    template_name = 'staff/client_detail.html'

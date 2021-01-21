@@ -3,22 +3,13 @@
 
 {% block content %}
 
-<div class="wrapper" style="border: 3px solid green">
-    <div class="sidenav">
-        <h2>menu</h2>
-        <ul>
-            <li><a href="#"><i class="fas fa-plus"></i>Create</a></li>
-            <li><a href="#"><i class="far fa-user"></i>Profile</a></li>
-            <li><a href="#"><i class="far fa-file-alt"></i>Invoices</a></li>
-            <li><a href="#"><i class="fas fa-users"></i>Users</a></li>
-            <li><a href="#"><i class="far fa-window-close"></i>Close</a></li>
-        </ul>
-    </div>
-    <div class="row dashboard" style="border: 3px solid blue">
-        <div class="col welcome_user" style="border: 3px solid red">
+<div class="wrapper">
+    {% include "sidenav.html" %}
+    <div class="row dashboard">
+        <div class="col welcome_user">
             <h5>Welcome {{ request.user.email }}</h5>
         </div>
-        <div class="col" style="border: 3px solid red">
+        <div class="col">
             <button class="total_debt_amount">
                 <span>N 952,482,635</span>
                 <p>Total Debt Amount</p>
@@ -28,7 +19,7 @@
     
 </div>
 
-<div class="row claims_list_info" style="border: 3px solid yellow">
+<div class="row claims_list_info">
     <div class="col claims_list_box">
         <i class="far fa-chart-bar"><span>{{ claims_count }}</span></i>
         <p class="total_claims_box">Total Claims</p>
@@ -47,8 +38,16 @@
     </div>
 </div>
 
-<div class="claims_list_margin_left" style="border:3px solid blue">
-    <h3>Recent Claims</h3>
+<div class="claims_list_margin_left">
+    <h3>Search Claims</h3>
+    <!-- Search Appears when search claims is clicked -->
+    <!-- <div class="claims_search">
+        <form method="post" action="#" class="search_ref_id">
+            {% csrf_token %}
+            <input type="text" placeholder="Search Ref IDs here" class="search_field">
+            <button class="btn_search"><i class="fas fa-search"></i></button>
+        </form>
+    </div> -->
     <table class="claims_list_table">
         <thead>
             <tr>

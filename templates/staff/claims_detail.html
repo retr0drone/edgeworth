@@ -2,19 +2,198 @@
 
 {% block content %}
 
-<h1>Detail View</h1>
+<div class="wrapper">
+    {% include "sidenav.html" %}
+    <div class="row dashboard dashboard_claims">
+        <div class="col debt_amount_wrapper">
+            <div class="debt_amount">
+                <p>Debt Amount</p>
+                <p>{{ claims.debt_amount }}</p>
+            </div>
+            <div class="row debt_recovered">
+                <div class="col">
+                    <p class="recovered_text">Recovered</p>
+                    <p class="recovered">{{ claims.debt_amount }}</p>
+                </div>
+                <div class="col">
+                    <p class="unrecovered_text">Unrecovered</p>
+                    <p class="unrecovered">{{ claims.debt_amount }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col client_info">
+            <div class="client_card">
+                <p class="client_name">Heirs Holding</p>
+                <p class="client_number">0000 0001</p>
+                <p class="client_since">TONY ELUMELU</p>
+                <p class="client_since"><span>Circles</span></p>
+                <!-- <p class="client_circles">Circles</p> -->
+                <!-- <img src="static/images/claims_detail/circles.svg" alt=""> -->
+            </div>
+        </div>
+        <!-- <div class="col client_info" style="border:3px solid blueviolet">
+            <div class="client_name" style="border:3px solid blue">
+                <p>Heirs Holding</p>
+            </div>
+            <div class="client_number" style="border:3px solid blue">
+                <p>0000 0001</p>
+            </div>
+            <div class="row client_last_row" style="border:3px solid yellow">
+                <div class="col client_since" style="border:3px solid blue">
+                    <p>Client for 4 Years</p>
+                    <p>TONY ELUMELU</p>
+                </div>
+                <div class="col client_circles" style="border:3px solid blue">
+                    <p>Circles</p>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    
+</div>
 
-<p>{{ claims.title }}</p>
-<p>{{ claims.description }}</p>
-<p>{{ claims.debt_currency }}</p>
-<p>{{ claims.debt_amount }}</p>
-<p>{{ claims.debtor_name }}</p>
-<p>{{ claims.debtor_email }}</p>
-<p>{{ claims.debtor_phone }}</p>
-<p>{{ claims.debtor_location }}</p>
-<p>{{ claims.support_files }}</p>
-<p>{{ claims.date_created }}</p>
+<!-- Update, Attachment, Comments Icons -->
+
+<div class="container claims_detail_icon_container">
+    <div class="row claims_detail_icons">
+        <div class="col">
+            <i class="fas fa-edit fa-2x"></i>
+            <p>Update</p>
+        </div>
+        <div class="col">
+            <i class="fas fa-paperclip fa-2x"></i>
+            <p>Add Files</p>
+        </div>
+        <div class="col">
+            <i class="far fa-comment-alt fa-2x"></i>
+            <p>Comment</p>
+        </div>
+    </div>
+</div>
+
+<!-- Client Info -->
+
+<div class="row claims_detail">
+    <div class="col-md-7">
+        <div class="claim_details_info">
+            <p>Client Info</p>
+        </div>
+        <form action="" class=" container claim_details_body">
+            <div>
+                <div class="row">
+                    <p class="col-md-6">Email</p>
+                    <p class="col-md-6">{{ claims.debtor_email }}</p>
+                </div>
+    
+                <div class="row">
+                    <p class="col-md-6">Phone</p>
+                    <p class="col-md-6">{{ claims.debtor_phone }}</p>
+                </div>
+    
+                <div class="row">
+                    <p class="col-md-6">Location</p>
+                    <p class="col-md-6">{{ claims.debtor_location }}</p>
+                </div>
+    
+                <div class="row">
+                    <p class="col-md-6">Created</p>
+                    <p class="col-md-6">{{ claims.date_created }}</p>
+                </div>
+    
+                <div class="row">
+                    <p class="col-md-6">Last Updated</p>
+                    <p class="col-md-6">{{ claims.date_updated }}</p>
+                </div>
+    
+                <div class="row">
+                    <p class="col-md-6">Status</p>
+                    <p class="col-md-6">{{ claims.status }}</p>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+
+<!-- Claims Description -->
+
+    <div class="col-md-4 claim_description">
+        <div class="claim_details_info">
+            <p>Claim Description</p>
+        </div>
+        <form action="" class=" container claim_details_body">
+            <div>                
+                <p>{{ claims.description }}</p>
+            </div>
+        </form>
+    </div>
+</div>
 
 
+<div class="row claims_detail">
+
+    <!-- Support Documents -->
+
+    <div class="col-md-6">
+        <div class=" claim_support_docs_head ">
+            <p>Support Documents</p>
+            <!-- <i class="fas fa-plus"></i> -->
+        </div>
+        <form action="" class=" container claim_support_docs_body">
+            <div>
+                <div class="row">
+                    <p class="col-md-6">Support Document 1</p>
+                    <i class="far fa-folder fa-1.9x folder"></i>
+                    <i class="far fa-trash-alt fa-1.9x trash"></i>
+                </div>
+    
+                <div class="row">
+                    <p class="col-md-6">Support Document 2</p>
+                    <i class="far fa-folder fa-1.9x folder"></i>
+                    <i class="far fa-trash-alt fa-1.9x trash"></i>
+                </div>
+    
+                <div class="row">
+                    <p class="col-md-6">Support Document 3</p>
+                    <i class="far fa-folder fa-1.9x folder"></i>
+                    <i class="far fa-trash-alt fa-1.9x trash"></i>
+                </div>
+    
+                <div class="row">
+                    <p class="col-md-6">Support Document 4</p>
+                    <i class="far fa-folder fa-1.9x folder"></i>
+                    <i class="far fa-trash-alt fa-1.9x trash"></i>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- <div class="col-md-1">
+
+    </div> -->
+
+<!-- Comments -->
+
+    <div class="col-md-5 claim_comments">
+        <div class="claim_comments_head">
+            <p>Comments</p>
+        </div>
+        <div class="container claim_comments_body">
+            <form action="">
+                <div>
+                    <p>Welcome Ehiz</p>
+                    <input type="text">
+                </div>
+                <div class="comments_support">
+                    <i class="fas fa-paperclip"><span>Add Attachment</span></i>
+                    <button>Enter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+
+</div>
 
 {% endblock content %}

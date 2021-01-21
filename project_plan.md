@@ -120,7 +120,16 @@ Completed: https://fontawesome.com/icons/tasks?style=solid
 
 Claims Detail
 
+Update: https://fontawesome.com/icons/edit?style=solid https://fontawesome.com/icons/edit?style=regular
+
+Add Files: https://fontawesome.com/icons/paperclip?style=solid
+
+Comment: https://fontawesome.com/icons/comment-alt?style=regular
+
+
 Company: https://fontawesome.com/icons/building?style=regular
+
+User: https://fontawesome.com/icons/user?style=regular
 
 Email: https://fontawesome.com/icons/envelope?style=regular
 
@@ -128,4 +137,11 @@ Sector: https://fontawesome.com/icons/briefcase?style=solid
 
 Phone: https://fontawesome.com/icons/phone-alt?style=solid
 
-Location: 
+Location: https://fontawesome.com/icons/phone-alt?style=solid
+
+Add Files
+
+Folder: https://fontawesome.com/icons/folder?style=regular
+
+Delete: https://fontawesome.com/icons/trash-alt?style=regular
+
