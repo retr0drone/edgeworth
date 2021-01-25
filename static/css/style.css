@@ -898,6 +898,9 @@ h1:after {
 /* CLIENT DETAIL VIEW */
 /* ----------------------------------- */
 
+/* ----- Client Details Card ----- */
+
+
 .wrapper .client_text {
     width: 100%;
     margin-left: 200px;
@@ -928,10 +931,6 @@ h1:after {
 }
 
 
-/* .client_details_card_row .col-md-6 {
-    width: 20%;
-} */
-
 .client_details_card p {
     padding-top: 25px;
     width: 50%;
@@ -948,7 +947,7 @@ h1:after {
     font-weight: 400;
     margin-left: 15px;
     color: #707070;
-   
+    
 }
 
 .client_details_card_label {
@@ -963,7 +962,109 @@ h1:after {
 }
 
 
+/* ----- Client Details Claims Info Card ----- */
 
+.client_details_claims_info_card_outer {
+    width: 100%;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.199);
+}
+
+.client_details_claims_info_card_inner {
+    /* width: 100%; */
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.199);
+}
+
+.client_details_claims_info_card_inner .fa-google {
+    color: #707070;
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+}
+
+.client_details_claims_info_card_inner span {
+    font-size: 50%; color: #707070;
+    margin-left: 20px;
+    margin-bottom: -20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.client_details_claims_info_card_inner p:last-child {
+    font-family: 'Hind', sans-serif;
+}
+
+.client_details_claims_info_card_inner .total_claims {
+    width: 50%;
+    margin-bottom: 0px;
+    margin-left: 60px;
+    font-family: 'Hind', sans-serif;
+
+}
+
+.client_details_claims_info_card_inner button {
+    background-color: #ffffff;
+    border: 1px solid #3DA9FC;
+    color: #3DA9FC;
+    border-radius: 5px;
+    font-size: 50%;
+    padding: 2px 8px;
+    margin-left: 60px;
+}
+
+.client_details_claims_info_card_inner .recent_claims {
+    margin-top: 15px;
+    font-size: 90%;
+    font-family: 'Hind', sans-serif;
+}
+
+
+.client_details_claims_info_card_inner .claims_recent_row {
+    /* margin-left: 20px; */
+    /* margin-right: 20px; */
+    /* padding-right: 0px; */
+
+    /* Used. Uncomment if bootstrap rows dont work */
+    margin-bottom: 30px;
+    width: 100%;
+    font-size: 65%;
+    padding: 10px 0px;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.199);
+    justify-content: space-evenly;
+
+}
+
+.client_details_claims_info_card_inner .claims_recent_col {
+    width: 50%;
+    padding-left: 10%;   
+    text-align: center;
+}
+
+.client_details_claims_info_card_inner .claims_recent_col p {
+    width: 70%;
+    margin: 0px;
+    font-family: 'Hind', sans-serif;
+}
+
+.client_details_claims_info_card_inner .claims_recent_col .claim_status_1,
+.client_details_claims_info_card_inner .claims_recent_col .claim_status_2 {
+    border-radius: 10px;
+    color: #FFFFFE;
+    width: 40%;
+    margin-left: 20px;
+    padding-top: 3px;
+}
+
+.client_details_claims_info_card_inner .claims_recent_col .claim_status_1 {
+    background-color: #EF4565;
+}
+.client_details_claims_info_card_inner .claims_recent_col .claim_status_2 {
+    background-color: #3DA9FC;
+}
 
 
 
